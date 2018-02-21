@@ -16,6 +16,7 @@ html[xmlns] .clear{display:block;}
 * html .clear{height:1%;}
 
 a{outline:none; text-decoration:none;}
+b{outline:none; text-decoration:none;}
 
 code{font-weight:normal; font-style:normal; font-family:Georgia, "Times New Roman", Times, serif;}
 
@@ -71,6 +72,7 @@ ul.progress_bar li:last-child:after{content: '';display: block;position: absolut
 /*----------------------------------------------Header-------------------------------------*/
 
 header, header a{color:#C0BAB6; background-color:#1f6b81;}
+header, header b{color:#C0BAB6; background-color:#1f6b81;}
 
 header #hgroup{float:left; padding:20px;}
 header #hgroup h1, header #hgroup h2{}
@@ -83,6 +85,7 @@ header nav li{display:inline; margin-right:15px; text-transform:uppercase;}
 header nav li.last{margin-right:0;}
 header nav a{color:#C0BAB6; background-color:#1f6b81;}
 header nav a:hover{color:#FF9900; background-color:#1f6b81;}
+header nav b{color:#C0BAB6; background-color:#1f6b81;}
 
 /*----------------------------------------------Content Area-------------------------------------*/
 
@@ -120,14 +123,15 @@ header nav a:hover{color:#FF9900; background-color:#1f6b81;}
 #container aside nav li{margin:0 0 3px 0; padding:0;}
 #container aside nav ul ul, #container aside nav ul ul ul, #container aside nav ul ul ul ul, #container aside nav ul ul ul ul ul{border-top:none; padding-top:0;}
 #container aside nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #F9F9F9; text-decoration:none; border-bottom:1px dotted #666666;}
+#container aside nav b{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #F9F9F9; text-decoration:none; border-bottom:1px dotted #666666;}
 #container aside nav a:hover{color:#FF9900; background-color:#F9F9F9;}
-#container aside nav ul ul a, #container aside nav ul ul ul a, #container aside nav ul ul ul ul a, #container aside nav ul ul ul ul ul a{background:url("../images/black_file.gif") no-repeat #F9F9F9;}
+#container aside nav ul ul a b, #container aside nav ul ul ul a, #container aside nav ul ul ul ul a, #container aside nav ul ul ul ul ul a{background:url("../images/black_file.gif") no-repeat #F9F9F9;}
 #container aside nav ul ul a{padding-left:40px; background-position:30px center;}
-#container aside nav ul ul ul a{padding-left:50px; background-position:40px center;}
-#container aside nav ul ul ul ul a{padding-left:60px; background-position:50px center;}
-#container aside nav ul ul ul ul ul a{padding-left:70px; background-position:60px center;}
+#container aside nav ul ul ul a b{padding-left:50px; background-position:40px center;}
+#container aside nav ul ul ul ul a b{padding-left:60px; background-position:50px center;}
+#container aside nav ul ul ul ul ul a b{padding-left:70px; background-position:60px center;}
 
 /*----------------------------------------------Footer-------------------------------------*/
 
-footer, footer a{color:#FFFFFF; background-color:#1E1E1E;}
+footer, footer a b{color:#FFFFFF; background-color:#1E1E1E;}
 footer p{margin:0; padding:20px 0;}
