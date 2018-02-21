@@ -8,7 +8,7 @@ Licence: <a href="http://www.os-templates.com/template-terms">Website Template L
 
 html{overflow-y:scroll;}
 
-body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#FFFFFF; background-color:#1E1E1E;}
+body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#FFFFFF; background-color:#1f6b81;}
 
 .clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
 .clear{display:block; width:100%; clear:both;}
@@ -70,7 +70,7 @@ ul.progress_bar li:last-child:after{content: '';display: block;position: absolut
 
 /*----------------------------------------------Header-------------------------------------*/
 
-header, header a{color:#C0BAB6; background-color:#333333;}
+header, header a{color:#C0BAB6; background-color:#1f6b81;}
 
 header #hgroup{float:left; padding:20px;}
 header #hgroup h1, header #hgroup h2{}
@@ -81,8 +81,8 @@ header nav{float:right; padding:20px;}
 header nav ul{margin-top:20px;}
 header nav li{display:inline; margin-right:15px; text-transform:uppercase;}
 header nav li.last{margin-right:0;}
-header nav a{color:#C0BAB6; background-color:#333333;}
-header nav a:hover{color:#FF9900; background-color:#333333;}
+header nav a{color:#C0BAB6; background-color:#1f6b81;}
+header nav a:hover{color:#FF9900; background-color:#1f6b81;}
 
 /*----------------------------------------------Content Area-------------------------------------*/
 
