@@ -70,7 +70,12 @@ $(document).ready(function () {
     if (lastCityResult != undefined) {
       lastCityResult.remove();
     }
-    lastCityResult = L.marker([maVille.Latitude, maVille.Longitude]).addTo(mapResult);
+    // create custom icon
+     var markerIcon = L.icon({
+       iconUrl: 'styles/resultMarker.png',
+       iconSize: [64, 64], // size of the icon
+     });
+     lastCityResult = L.marker([maVille.Latitude, maVille.Longitude], { icon: markerIcon }).addTo(mapResult);
 
     // Gestion de la création de la ligne entre les deux markers
     if (lastLine != undefined) {
@@ -175,15 +180,6 @@ $(document).ready(function () {
 
     var mylat = e.latlng.lat;
     var mylng = e.latlng.lng;
-
-    //Ajoute le marker sur la map de recherche
-    // create custom icon
-    /* var firefoxIcon = L.icon({
-       iconUrl: 'marker-icon.png',
-       iconSize: [38, 38], // size of the icon
-     });
-     lastmarker = L.marker([mylat, mylng], { icon: firefoxIcon }).addTo(map);*/
-
 
     //Ajoute le marker sur la map de recherche
     lastmarker = L.marker([mylat, mylng]).addTo(map);
