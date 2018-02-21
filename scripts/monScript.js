@@ -104,7 +104,7 @@ $(document).ready(function () {
     console.log(monScore);
     monScoreTotal = monScoreTotal + monScore;
     //document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(2) + " POINTS";
-    document.getElementById("myScoreTotal").innerHTML = monScoreTotal.toFixed(2);
+    document.getElementById("myScoreTotal").innerHTML = monScoreTotal.toFixed(0);
   }
 
   function Scores(dist) {
