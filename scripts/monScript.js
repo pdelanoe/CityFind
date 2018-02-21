@@ -141,7 +141,7 @@ function calculDistance(lat1, lon1, lat2, lon2) {
 
 function newCity() {
   nbCityFind++;
-  $.getJSON('VillesFr.json', function (donnees) {
+  getJSON('VillesFr.json', function (donnees) {
     var rd = Math.floor((Math.random() * 273) + 1);
     maVille = donnees.Ville[rd]
     console.log(maVille);
