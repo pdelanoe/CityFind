@@ -53,7 +53,7 @@ h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:24px; font-weight:normal; 
 
 
 
-ul.progress_bar{  max-width: 29em;  width: 100%;  padding: 0 0;  height: 2em;  margin-left: 100%;  padding: 0;  font-size: 10px; /* change font size only to scale*/}
+ul.progress_bar{  max-width: 29em;  width: 100%;  padding: 0 18px;  height: 2em;  margin-left: 100%;  padding: 0;  font-size: 10px; /* change font size only to scale*/}
 
 ul.progress_bar li{  width: 25%;  float: left;  height: 100%;  list-style: none;  position: relative;  margin: 0;  padding: 0;}
 
@@ -81,12 +81,13 @@ header #hgroup h2{font-size:13px;}
 header #hgroup h3{font-size:40px;}
 
 header nav{float:right; padding:20px;}
-header nav ul{margin-top:20px;}
+header nav ul{margin-top:15px;}
 header nav li{display:inline; margin-right:15px; text-transform:uppercase;}
 header nav li.last{margin-right:0;}
-header nav a{color:#C0BAB6; background-color:#1f6b81;}
+header nav a{color:#C0BAB6; background-color:#1f6b81;margin-right: 5%;}
 header nav a:hover{color:#FF9900; background-color:#1f6b81;}
-header nav b{color:#C0BAB6; background-color:#1f6b81;}
+header nav b{color:#C0BAB6; background-color:#1f6b81;margin-right: 5%;}
+header nav c{color:#C0BAB6; background-color:#1f6b81;margin-right: 15%; margin-left: 10%;}
 
 /*----------------------------------------------Content Area-------------------------------------*/
 
@@ -119,7 +120,7 @@ header nav b{color:#C0BAB6; background-color:#1f6b81;}
 
 #container aside{float:right; width:300px;}
 
-#container aside nav{display:block; width:300px; margin-bottom:30px;}
+#container aside nav{display:block; width:400px; margin-bottom:30px;}
 #container aside nav h2{margin:0 0 20px 0; color:#666666; background-color:#FFFFFF;}
 #container aside nav h3{margin:0 0 40px 0; color:#2cabcf; background-color:#FFFFFF;font-size: 40px;}
 #container aside nav ul{margin:0; padding:0; list-style:none;}
