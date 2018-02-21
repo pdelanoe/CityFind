@@ -1,0 +1,133 @@
+/*
+HTML 5 Template Name: Basic 63
+File: Layout CSS
+Author: OS Templates
+Author URI: http://www.os-templates.com/
+Licence: <a href="http://www.os-templates.com/template-terms">Website Template Licence</a>
+*/
+
+html{overflow-y:scroll;}
+
+body{margin:0; padding:0; font-size:13px; font-family:Georgia, "Times New Roman", Times, serif; color:#FFFFFF; background-color:#1E1E1E;}
+
+.clear:after{content:"."; display:block; height:0; clear:both; visibility:hidden; line-height:0;}
+.clear{display:block; width:100%; clear:both;}
+html[xmlns] .clear{display:block;}
+* html .clear{height:1%;}
+
+a{outline:none; text-decoration:none;}
+
+code{font-weight:normal; font-style:normal; font-family:Georgia, "Times New Roman", Times, serif;}
+
+.fl_left{float:left;}
+.fl_right{float:right;}
+
+img{margin:0; padding:0; border:none; line-height:normal; vertical-align:middle;}
+.imgholder, .imgl, .imgr{padding:4px; border:1px solid #D6D6D6; text-align:center;}
+.imgl{float:left; margin:0 15px 15px 0; clear:left;}
+.imgr{float:right; margin:0 0 15px 15px; clear:right;}
+
+/*----------------------------------------------HTML 5 Overrides-------------------------------------*/
+
+address, article, aside, figcaption, figure, footer, header, nav, section{display:block; margin:0; padding:0;}
+
+q{display:block; padding:0 10px 8px 10px; color:#979797; background-color:#ECECEC; font-style:italic; line-height:normal;}
+q:before{content:'� '; font-size:26px;}
+q:after{content:' �'; font-size:26px; line-height:0;}
+
+/*----------------------------------------------Generalise-------------------------------------*/
+
+header, footer{display:block; margin:0 auto;}
+
+nav ul{margin:0; padding:0; list-style:none;}
+
+.btn {    display: inline-block;    padding: 5px 10px;    background: #2cabcf;    border: 1px solid #eee;    color: #eee;}
+ 
+.btn:hover, .btn:focus {    background: #ccc;    text-shadow: 0 -1px #eee;    color:#1f6b81;}
+ 
+.btn:active {    background: #2cabcf;    text-shadow: 0 -1px #eee;    border: 1px solid #1f6b81;}
+
+h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:24px; font-weight:normal; font-style:normal; line-height:normal;}
+
+
+
+
+ul.progress_bar{  max-width: 29em;  width: 100%;  padding: 0 18px;  height: 2em;  margin-left: 100%;  padding: 0;  font-size: 10px; /* change font size only to scale*/}
+
+ul.progress_bar li{  width: 25%;  float: left;  height: 100%;  list-style: none;  position: relative;  margin: 0;  padding: 0;}
+
+/*lignes*/
+ul.progress_bar li span{  position: absolute;  display: block;  top: 0;  bottom: 0;  left: 0;  right: 0;  margin: auto;  background: #2cabcf;  height: .4em;  z-index: 1;}
+
+/*non activée*/
+ul.progress_bar li:before{content: '';display: block;position: absolute;left: 0;top: 0;background: #fff;width: 2em;height: 2em;border-radius: 2em; z-index: 2;border: 0.3em solid #2cabcf;  box-sizing: border-box;}
+
+/*activee*/
+ul.progress_bar li.activated:before{ content: ''; display: block;  position: absolute; left: 0; top: 0;background: #2cabcf; width: 2em; height: 2em;border-radius: 2em; z-index: 2;}
+
+/*derniere*/
+ul.progress_bar li:last-child:after{content: '';display: block;position: absolute;right: -2em;top: 0;background: #fff;width: 2em;height: 2em; border-radius: 2em; z-index: 2;border: 0.3em solid #2cabcf;  box-sizing: border-box;}
+
+/*----------------------------------------------Header-------------------------------------*/
+
+header, header a{color:#C0BAB6; background-color:#333333;}
+
+header #hgroup{float:left; padding:20px;}
+header #hgroup h1, header #hgroup h2{}
+header #hgroup h1{font-size:36px;}
+header #hgroup h2{font-size:13px;}
+
+header nav{float:right; padding:20px;}
+header nav ul{margin-top:20px;}
+header nav li{display:inline; margin-right:15px; text-transform:uppercase;}
+header nav li.last{margin-right:0;}
+header nav a{color:#C0BAB6; background-color:#333333;}
+header nav a:hover{color:#FF9900; background-color:#333333;}
+
+/*----------------------------------------------Content Area-------------------------------------*/
+
+#container{display:block; margin:0 auto; padding:30px 20px 0 20px; color:#979797; background-color:#FFFFFF;}
+
+/* ------Content-----*/
+
+#container #content{float:left; width:590px;}
+#container #content a{color:#FF9900; background-color:#FFFFFF;}
+
+#container #content .more{text-align:right; text-transform:uppercase; font-size:smaller; font-weight:bold;}
+
+#container section{margin:0 0 30px 0;}
+#container section.last{margin:0;}
+
+#container section article{display:block; width:280px; float:left;}
+#container section article.odd{margin-right:30px;}
+#container section article.even{margin-right:0;}
+
+#container section article figure{}
+#container section article figure img{float:left; clear:left; margin:0 10px 3px 0; padding:4px; border:1px solid #333333;}
+#container section article figure figcaption{display:none;}
+
+#container section article h2{font-size:14px; font-weight:bold; text-transform:uppercase;}
+#container section article address{font-size:10px; font-style:normal;}
+#container section article time{font-size:10px;}
+
+/* ------Right Column-----*/
+
+#container aside{float:right; width:300px;}
+
+#container aside nav{display:block; width:300px; margin-bottom:30px;}
+#container aside nav h2{margin:0 0 20px 0; color:#666666; background-color:#F9F9F9;}
+#container aside nav ul{margin:0; padding:0; list-style:none;}
+#container aside nav li{margin:0 0 3px 0; padding:0;}
+#container aside nav ul ul, #container aside nav ul ul ul, #container aside nav ul ul ul ul, #container aside nav ul ul ul ul ul{border-top:none; padding-top:0;}
+#container aside nav a{display:block; margin:0; padding:5px 10px 5px 20px; color:#666666; background:url("../images/orange_file.gif") no-repeat 10px center #F9F9F9; text-decoration:none; border-bottom:1px dotted #666666;}
+#container aside nav a:hover{color:#FF9900; background-color:#F9F9F9;}
+#container aside nav ul ul a, #container aside nav ul ul ul a, #container aside nav ul ul ul ul a, #container aside nav ul ul ul ul ul a{background:url("../images/black_file.gif") no-repeat #F9F9F9;}
+#container aside nav ul ul a{padding-left:40px; background-position:30px center;}
+#container aside nav ul ul ul a{padding-left:50px; background-position:40px center;}
+#container aside nav ul ul ul ul a{padding-left:60px; background-position:50px center;}
+#container aside nav ul ul ul ul ul a{padding-left:70px; background-position:60px center;}
+
+/*----------------------------------------------Footer-------------------------------------*/
+
+footer, footer a{color:#FFFFFF; background-color:#1E1E1E;}
+footer p{margin:0; padding:20px 0;}
