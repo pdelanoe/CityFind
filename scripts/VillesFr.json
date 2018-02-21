@@ -146,7 +146,7 @@
   },
   {
     "id": 25,
-    "Nom": "Nîmes",
+    "Nom": "Nï¿½mes",
     "Latitude": 43.83,
     "Longitude": 4.35
   },
@@ -170,7 +170,7 @@
   },
   {
     "id": 29,
-    "Nom": "Besançon",
+    "Nom": "Besanï¿½on",
     "Latitude": 47.25,
     "Longitude": 6.03
   },
@@ -194,7 +194,7 @@
   },
   {
     "id": 33,
-    "Nom": "Orléans",
+    "Nom": "Orlï¿½ans",
     "Latitude": 47.92,
     "Longitude": 1.9
   },
@@ -266,7 +266,7 @@
   },
   {
     "id": 45,
-    "Nom": "Béziers",
+    "Nom": "Bï¿½ziers",
     "Latitude": 43.35,
     "Longitude": 3.25
   },
@@ -320,7 +320,7 @@
   },
   {
     "id": 54,
-    "Nom": "Vénissieux",
+    "Nom": "Vï¿½nissieux",
     "Latitude": 45.68,
     "Longitude": 4.88
   },
@@ -350,7 +350,7 @@
   },
   {
     "id": 59,
-    "Nom": "Mérignac",
+    "Nom": "Mï¿½rignac",
     "Latitude": 44.83,
     "Longitude": -0.63
   },
@@ -362,7 +362,7 @@
   },
   {
     "id": 61,
-    "Nom": "Charleville-mézières",
+    "Nom": "Charleville-mï¿½ziï¿½res",
     "Latitude": 49.76,
     "Longitude": 4.71
   },
@@ -374,7 +374,7 @@
   },
   {
     "id": 63,
-    "Nom": "Chalon-sur-saône",
+    "Nom": "Chalon-sur-saï¿½ne",
     "Latitude": 46.78,
     "Longitude": 4.85
   },
@@ -386,7 +386,7 @@
   },
   {
     "id": 65,
-    "Nom": "Chambéry",
+    "Nom": "Chambï¿½ry",
     "Latitude": 45.56,
     "Longitude": 5.93
   },
@@ -410,7 +410,7 @@
   },
   {
     "id": 69,
-    "Nom": "Châteauroux",
+    "Nom": "Chï¿½teauroux",
     "Latitude": 46.81,
     "Longitude": 1.7
   },
@@ -458,7 +458,7 @@
   },
   {
     "id": 77,
-    "Nom": "Châlons-en-champagne",
+    "Nom": "Chï¿½lons-en-champagne",
     "Latitude": 48.95,
     "Longitude": 4.36
   },
@@ -476,7 +476,7 @@
   },
   {
     "id": 80,
-    "Nom": "Hyères",
+    "Nom": "Hyï¿½res",
     "Latitude": 43.11,
     "Longitude": 6.11
   },
@@ -536,7 +536,7 @@
   },
   {
     "id": 90,
-    "Nom": "Montluçon",
+    "Nom": "Montluï¿½on",
     "Latitude": 46.33,
     "Longitude": 2.6
   },
@@ -566,7 +566,7 @@
   },
   {
     "id": 95,
-    "Nom": "Angoulême",
+    "Nom": "Angoulï¿½me",
     "Latitude": 45.65,
     "Longitude": 0.15
   },
@@ -596,7 +596,7 @@
   },
   {
     "id": 100,
-    "Nom": "Compiègne",
+    "Nom": "Compiï¿½gne",
     "Latitude": 49.41,
     "Longitude": 2.83
   },
@@ -620,13 +620,13 @@
   },
   {
     "id": 104,
-    "Nom": "Sète",
+    "Nom": "Sï¿½te",
     "Latitude": 43.4,
     "Longitude": 3.68
   },
   {
     "id": 105,
-    "Nom": "Fréjus",
+    "Nom": "Frï¿½jus",
     "Latitude": 43,
     "Longitude": 6
   },
@@ -650,7 +650,7 @@
   },
   {
     "id": 109,
-    "Nom": "Alès",
+    "Nom": "Alï¿½s",
     "Latitude": 44.13,
     "Longitude": 4.08
   },
@@ -728,13 +728,13 @@
   },
   {
     "id": 122,
-    "Nom": "Mâcon",
+    "Nom": "Mï¿½con",
     "Latitude": 46.3,
     "Longitude": 4.83
   },
   {
     "id": 123,
-    "Nom": "Joué-lès-tours",
+    "Nom": "Jouï¿½-lï¿½s-tours",
     "Latitude": 47.35,
     "Longitude": 0.66
   },
@@ -800,7 +800,7 @@
   },
   {
     "id": 134,
-    "Nom": "Châtellerault",
+    "Nom": "Chï¿½tellerault",
     "Latitude": 46.8,
     "Longitude": 0.53
   },
@@ -818,13 +818,13 @@
   },
   {
     "id": 137,
-    "Nom": "St-martin-d'hères",
+    "Nom": "St-martin-d'hï¿½res",
     "Latitude": 45,
     "Longitude": 6
   },
   {
     "id": 138,
-    "Nom": "Vandoeuvre-lès-nancy",
+    "Nom": "Vandoeuvre-lï¿½s-nancy",
     "Latitude": 48.65,
     "Longitude": 6.18
   },
@@ -836,7 +836,7 @@
   },
   {
     "id": 140,
-    "Nom": "Liévin",
+    "Nom": "Liï¿½vin",
     "Latitude": 50.41,
     "Longitude": 2.76
   },
@@ -854,7 +854,7 @@
   },
   {
     "id": 143,
-    "Nom": "Rezé",
+    "Nom": "Rezï¿½",
     "Latitude": 47.2,
     "Longitude": -1.56
   },
@@ -878,7 +878,7 @@
   },
   {
     "id": 147,
-    "Nom": "Romans-sur-isère",
+    "Nom": "Romans-sur-isï¿½re",
     "Latitude": 45.05,
     "Longitude": 5.05
   },
@@ -950,7 +950,7 @@
   },
   {
     "id": 159,
-    "Nom": "Périgueux",
+    "Nom": "Pï¿½rigueux",
     "Latitude": 45.18,
     "Longitude": 0.71
   },
@@ -968,13 +968,13 @@
   },
   {
     "id": 162,
-    "Nom": "Alençon",
+    "Nom": "Alenï¿½on",
     "Latitude": 48.43,
     "Longitude": 0.08
   },
   {
     "id": 163,
-    "Nom": "Montélimar",
+    "Nom": "Montï¿½limar",
     "Latitude": 44.56,
     "Longitude": 4.75
   },
@@ -998,13 +998,13 @@
   },
   {
     "id": 167,
-    "Nom": "Sotteville-lès-rouen",
+    "Nom": "Sotteville-lï¿½s-rouen",
     "Latitude": 49.41,
     "Longitude": 1.1
   },
   {
     "id": 168,
-    "Nom": "Villefranche-sur-saône",
+    "Nom": "Villefranche-sur-saï¿½ne",
     "Latitude": 45.98,
     "Longitude": 4.71
   },
@@ -1040,7 +1040,7 @@
   },
   {
     "id": 174,
-    "Nom": "Montbéliard",
+    "Nom": "Montbï¿½liard",
     "Latitude": 47.51,
     "Longitude": 6.8
   },
@@ -1166,7 +1166,7 @@
   },
   {
     "id": 195,
-    "Nom": "St-raphaël",
+    "Nom": "St-raphaï¿½l",
     "Latitude": 43,
     "Longitude": 7
   },
@@ -1190,7 +1190,7 @@
   },
   {
     "id": 199,
-    "Nom": "Hénin-beaumont",
+    "Nom": "Hï¿½nin-beaumont",
     "Latitude": 50.41,
     "Longitude": 2.93
   },
@@ -1226,19 +1226,19 @@
   },
   {
     "id": 205,
-    "Nom": "Armentières",
+    "Nom": "Armentiï¿½res",
     "Latitude": 50.68,
     "Longitude": 2.88
   },
   {
     "id": 206,
-    "Nom": "Bruay-la-buissière",
+    "Nom": "Bruay-la-buissiï¿½re",
     "Latitude": 50.48,
     "Longitude": 2.55
   },
   {
     "id": 207,
-    "Nom": "Hérouville-st-clair",
+    "Nom": "Hï¿½rouville-st-clair",
     "Latitude": 49.2,
     "Longitude": -0.32
   },
@@ -1256,13 +1256,13 @@
   },
   {
     "id": 210,
-    "Nom": "Décines-charpieu",
+    "Nom": "Dï¿½cines-charpieu",
     "Latitude": 45.75,
     "Longitude": 4.96
   },
   {
     "id": 211,
-    "Nom": "Béthune",
+    "Nom": "Bï¿½thune",
     "Latitude": 50.53,
     "Longitude": 2.63
   },
@@ -1406,13 +1406,13 @@
   },
   {
     "id": 235,
-    "Nom": "St-dié",
+    "Nom": "St-diï¿½",
     "Latitude": 48,
     "Longitude": 7
   },
   {
     "id": 236,
-    "Nom": "Bègles",
+    "Nom": "Bï¿½gles",
     "Latitude": 44.8,
     "Longitude": -0.53
   },
@@ -1442,13 +1442,13 @@
   },
   {
     "id": 241,
-    "Nom": "Fougères",
+    "Nom": "Fougï¿½res",
     "Latitude": 48.35,
     "Longitude": -1.2
   },
   {
     "id": 242,
-    "Nom": "St-sébastien-sur-loire",
+    "Nom": "St-sï¿½bastien-sur-loire",
     "Latitude": 47,
     "Longitude": -2
   },
@@ -1466,13 +1466,13 @@
   },
   {
     "id": 245,
-    "Nom": "St-médard-en-jalles",
+    "Nom": "St-mï¿½dard-en-jalles",
     "Latitude": 45,
     "Longitude": -1
   },
   {
     "id": 246,
-    "Nom": "Montigny-lès-metz",
+    "Nom": "Montigny-lï¿½s-metz",
     "Latitude": 49.1,
     "Longitude": 6.15
   },
@@ -1526,7 +1526,7 @@
   },
   {
     "id": 255,
-    "Nom": "St-lô",
+    "Nom": "St-lï¿½",
     "Latitude": 49,
     "Longitude": -1
   },
@@ -1538,7 +1538,7 @@
   },
   {
     "id": 257,
-    "Nom": "Ste-foy-lès-lyon",
+    "Nom": "Ste-foy-lï¿½s-lyon",
     "Latitude": 46,
     "Longitude": 5
   },
@@ -1568,13 +1568,13 @@
   },
   {
     "id": 262,
-    "Nom": "Le Mée-sur-seine",
+    "Nom": "Le Mï¿½e-sur-seine",
     "Latitude": 48.53,
     "Longitude": 2.63
   },
   {
     "id": 263,
-    "Nom": "Fécamp",
+    "Nom": "Fï¿½camp",
     "Latitude": 49.75,
     "Longitude": 0.36
   },
@@ -1586,13 +1586,13 @@
   },
   {
     "id": 265,
-    "Nom": "Vélizy-villacoublay",
+    "Nom": "Vï¿½lizy-villacoublay",
     "Latitude": 48.8,
     "Longitude": 2.18
   },
   {
     "id": 266,
-    "Nom": "Lunéville",
+    "Nom": "Lunï¿½ville",
     "Latitude": 48.6,
     "Longitude": 6.5
   },
