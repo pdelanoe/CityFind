@@ -23,6 +23,7 @@ $(document).ready(function () {
 
 
   $("#button_restart").click(function () {
+    setMapView(map);
     nbCityFind = 0;
     scoreTotal = 0;
     var bouton = document.getElementById('button_retour');
@@ -38,6 +39,7 @@ $(document).ready(function () {
 
   $("#button_valider").click(function () {
     if (lastmarker != undefined) {
+      setMapView(mapResult);
       hide_div('game');
       result();
       show_div('result');
@@ -50,6 +52,7 @@ $(document).ready(function () {
 
 
   $("#button_retour").click(function () {
+    setMapView(map);
     hide_div('result');
     //Remove marker sur la map de recherche
     if (lastmarker != undefined) {
@@ -59,10 +62,16 @@ $(document).ready(function () {
     show_div('game');
   });
 
-
+  var lastmarker;
+  var lastmarkerResult;
   var lastCityResult;
   var lastLine;
   var maVille;
+
+  function setMapView(m)
+  {
+      m.setView([46.8, 1.5], 6.4);
+  }
 
   function result() {
 
@@ -105,14 +114,15 @@ $(document).ready(function () {
       valbar = (1 - (maDistance / 400)) * 100;
     }
 
-    var monScore = Scores(maDistance);
+    var monScore = scores(maDistance);
     console.log(monScore);
     monScoreTotal = monScoreTotal + monScore;
     //document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(2) + " POINTS";
-    document.getElementById("myScoreTotal").innerHTML = monScoreTotal.toFixed(0);
+    document.getElementById("myScoreTotal").innerHTML ="<center>"+ monScoreTotal.toFixed(0);+"</center>";
   }
 
-  function Scores(dist) {
+  //FONCTION QUI CALCULE LE SCORE
+  function scores(dist) {
     var score;;
     if (dist < 50) {
       score = 20000;
@@ -131,10 +141,11 @@ $(document).ready(function () {
 
   }
 
+  //FONCTION QUI CALCULE LA DISTANCE ENTRE LES DEUX COORDONNEES
   function calculDistance(lat1, lon1, lat2, lon2) {
     rad = function (x) { return x * Math.PI / 180; }
 
-    var R = 6378.137;                     //La radio de la Terre en km (WGS84)
+    var R = 6378.137;  //La radio de la Terre en km (WGS84)
     var dLat = rad(lat2 - lat1);
     var dLong = rad(lon2 - lon1);
 
@@ -145,8 +156,10 @@ $(document).ready(function () {
     return d.toFixed(3);
   }
 
+  //FONCTION QUI RENVOIE UNE NOUVELLE VILLE A CHERCHER
   function newCity() {
     nbCityFind++;
+    document.getElementById("myNbCityFind").innerHTML = "<center>"+nbCityFind+"/5</center>";
     $.getJSON('scripts/VillesFr.json', function (donnees) {
       var rd = Math.floor((Math.random() * 273) + 1);
       maVille = donnees.Ville[rd]
@@ -155,35 +168,31 @@ $(document).ready(function () {
     });
   }
 
+  //FONCTION QUI CACHE UNE DIV
   function hide_div(nomdiv) {
     var lediv = document.getElementById(nomdiv);
     lediv.style.display = "none";
   }
-
+  //FONCTION QUI AFFICHE UNE DIV
   function show_div(nomdiv) {
     var lediv = document.getElementById(nomdiv);
     lediv.style.display = "inline";
   }
 
-
-  var lastmarker;
-  var lastmarkerResult;
-
+  //ACTION AU CLICK SU LA MAP DE RECHERCHE
   map.on('click', function (e) {
-
+    //Supprime les anciens markers si ils sont présents
     if (lastmarker != undefined && lastmarkerResult != undefined) {
       lastmarker.remove();
       lastmarkerResult.remove();
     }
-
-    console.log(e.latlng.lng, e.latlng.lat);
-
+    //Recuperation Lat/Lng
     var mylat = e.latlng.lat;
     var mylng = e.latlng.lng;
-
     //Ajoute le marker sur la map de recherche
     lastmarker = L.marker([mylat, mylng]).addTo(map);
     //Ajoute le marker sur la map de resultat
     lastmarkerResult = L.marker([mylat, mylng]).addTo(mapResult);
   });
+
 });
