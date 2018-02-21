@@ -6,5 +6,6 @@ Le but de ce jeu est de localiser une série de ville avec le plus de précision
 Steven Charbois 
 Pierre-Gilles Delanoë
 
-Technologie utilisée : 
-google maps API
+Technologies utilisées : 
+MapBox API
+JSON
