@@ -104,7 +104,7 @@ $(document).ready(function () {
     console.log(monScore);
     monScoreTotal = monScoreTotal + monScore;
     //document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(2) + " POINTS";
-    //document.getElementById("myScoreTotal").innerHTML = "SCORE TOTAL = " + monScoreTotal.toFixed(2) + " POINTS";
+    document.getElementById("myScoreTotal").innerHTML = monScoreTotal.toFixed(2);
   }
 
   function Scores(dist) {
@@ -146,7 +146,7 @@ $(document).ready(function () {
       var rd = Math.floor((Math.random() * 273) + 1);
       maVille = donnees.Ville[rd]
       console.log(maVille);
-      //document.getElementById("ville").innerHTML = "TROUVER SUR LA CARTE : " + maVille.Nom;
+      document.getElementById("City").innerHTML = maVille.Nom;
     });
   }
 
