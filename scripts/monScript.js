@@ -28,12 +28,13 @@ $(document).ready(function () {
   hide_div('result');
   newCity();
 
-
+  //BOUTON QUI PERMET DE RESTART LA PARTIE
   $("#button_restart").click(function () {
     restartGame();
   });
 
 
+  //BOUTON QUI PERMET D'AFFICHER LE RESULTAT DE LA VILLE CHERCHE
   $("#button_valider").click(function () {
     if (lastmarker != null) {
       setMapView(mapResult);
@@ -47,6 +48,7 @@ $(document).ready(function () {
     }
   });
 
+  //BOUTON QUI PERMET DE CHERCHER UNENOUVELLE VILLE QUAND ON EST SUR L'AFFICHAGE RESULTAT
   $("#button_retour").click(function () {
     setMapView(map);
     hide_div('result');
@@ -61,12 +63,13 @@ $(document).ready(function () {
     show_div('game');
   });
 
+   //FONCTION MODIFIANT LE NOMBRE DE VILLE A TROUVER
   $('#selectorNb button').click(function () {
     nbCityNeedToFind = this.value;
     restartGame();
   });
 
-
+  //FONCTION PERMETTANT DE RESET L'EMPLACEMENT DE LA CARTE
   function setMapView(m) {
     m.setView([46.8, 1.5], 6.4);
   }
@@ -132,6 +135,7 @@ $(document).ready(function () {
     document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
   }
 
+  
   //FONCTION QUI CALCULE LE SCORE
   function scores(dist) {
     var score;;
