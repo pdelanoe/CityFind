@@ -42,20 +42,29 @@ header, footer{display:block; margin:0 auto;}
 
 nav ul{margin:0; padding:0; list-style:none;}
 
+
+
+/*---------------------------------------------Buttons-------------------------------------*/
+
+
+
 .btn {    display: inline-block;    padding: 5px 10px;    background: #2cabcf;    border: 1px solid #eee;    color: #eee;}
  
-.btn:hover, .btn:focus {    background: #ccc;    text-shadow: 0 -1px #eee;    color:#1f6b81;}
+.btn-toggled {background: #ccc;    text-shadow: 0 -1px #eee;    color:#1f6b81;}
+.btn-default {background: #2cabcf;    border: 1px solid #eee;    color: #eee;}
+
+/*.btn:hover, .btn:focus {    background: #ccc;    text-shadow: 0 -1px #eee;    color:#1f6b81;}
  
-.btn:active {    background: #2cabcf;    text-shadow: 0 -1px #eee;    border: 1px solid #1f6b81;}
+.btn:active {    background: #2cabcf;    text-shadow: 0 -1px #eee;    border: 1px solid #1f6b81;}*/
 
 h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:24px; font-weight:normal; font-style:normal; line-height:normal;}
 
 
 
+/*-----------------------------------------ProgressBar------------------------------------*/
+ul.progress_bar{  max-width: 120em;  width: 100%;  padding: 0 18px;  height: 2em;  margin-left: 40%;  padding: 0;  font-size: 10px; /* change font size only to scale*/}
 
-ul.progress_bar{  max-width: 29em;  width: 100%;  padding: 0 18px;  height: 2em;  margin-left: 100%;  padding: 0;  font-size: 10px; /* change font size only to scale*/}
-
-ul.progress_bar li{  width: 25%;  float: left;  height: 100%;  list-style: none;  position: relative;  margin: 0;  padding: 0;}
+ul.progress_bar li{  width: 7%;  float: left;  height: 100%;  list-style: none;  position: relative;  margin: 0;  padding: 0;}
 
 /*lignes*/
 ul.progress_bar li span{  position: absolute;  display: block;  top: 0;  bottom: 0;  left: 0;  right: 0;  margin: auto;  background: #2cabcf;  height: .4em;  z-index: 1;}
@@ -118,7 +127,7 @@ header nav c{color:#C0BAB6; background-color:#1f6b81;margin-right: 40%; margin-l
 
 /* ------Right Column-----*/    
 
-#container aside{float:right; width:300px;}
+#container aside{float:right; width:300px; margin-right: 10%}
 
 #container aside nav{display:block; width:400px; margin-bottom:30px;}
 #container aside nav h2{margin:0 0 20px 0; color:#666666; background-color:#FFFFFF;}
