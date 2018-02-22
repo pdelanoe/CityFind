@@ -22,7 +22,7 @@ var lastmarkerResult = null;
 var lastCityResult = null;
 var lastLine = null;
 var maVille;
-document.getElementById('progress').style.marginLeft="94%";
+document.getElementById('progress').style.marginLeft="96%";
 //jacques//
 
 
@@ -72,13 +72,13 @@ $(document).ready(function () {
     nbCityNeedToFind = Number(this.value);
     switch(nbCityNeedToFind) {
       case 5 : 
-        document.getElementById('progress').style.marginLeft="94%";
+        document.getElementById('progress').style.marginLeft="96%";
         break;
       case 10 : 
-        document.getElementById('progress').style.marginLeft="76%";
+        document.getElementById('progress').style.marginLeft="80%";
         break;
       case 15 : 
-        document.getElementById('progress').style.marginLeft="59%";
+        document.getElementById('progress').style.marginLeft="65%";
         break;
     }
 
@@ -116,10 +116,12 @@ $(document).ready(function () {
   function restartGame() {
 
     $("#bullet_points").empty();
-    for (var i =0; i<nbCityNeedToFind -1;i++)
+    $("#bullet_points").append('<li class="activated"><span></span></li>');
+    for (var i =1; i<nbCityNeedToFind -1;i++)
     {      
       $("#bullet_points").append('<li><span></span></li>');
     }
+    $("#bullet_points").append('<li></li>');
     
     var bouton = document.getElementById('button_retour');
     if (bouton.disabled == true) {
@@ -218,6 +220,7 @@ $(document).ready(function () {
 
   //FONCTION QUI RENVOIE UNE NOUVELLE VILLE A CHERCHER
   function newCity() {
+    if(nbCityFind)
     document.getElementById("bullet_points").children[nbCityFind].className += 'activated';
     nbCityFind++;
     document.getElementById("myNbCityFind").innerHTML = "<center>" + nbCityFind + "/" + nbCityNeedToFind + "</center>";
