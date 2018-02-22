@@ -25,6 +25,7 @@ var maVille;
 
 
 $(document).ready(function () {
+  hide_div('id01');
   hide_div('result');
   newCity();
   getScores(nbCityNeedToFind);
@@ -211,7 +212,7 @@ $(document).ready(function () {
     lastmarkerResult = L.marker([mylat, mylng]).addTo(mapResult);
   });
 
-  //FONCTION QUI RECUPERE LES sCORES 
+  //FONCTION QUI RECUPERE LES SCORES 
   function getScores(nb) {
     var mesScores = new Array();
     $.getJSON('scripts/Scores.json', function (donnees) {
