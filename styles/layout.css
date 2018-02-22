@@ -84,7 +84,6 @@ header, header a{color:#C0BAB6; background-color:#1f6b81;}
 header, header b{color:#C0BAB6; background-color:#1f6b81;}
 
 header #hgroup{float:left; padding:20px;}
-header #hgroup h1, header #hgroup h2{}
 header #hgroup h1{font-size:36px;}
 header #hgroup h2{font-size:13px;}
 header #hgroup h3{font-size:40px;}
@@ -116,7 +115,6 @@ header nav c{color:#C0BAB6; background-color:#1f6b81;margin-right: 40%; margin-l
 #container section article.odd{margin-right:30px;}
 #container section article.even{margin-right:0;}
 
-#container section article figure{}
 #container section article figure img{float:left; clear:left; margin:0 10px 3px 0; padding:4px; border:1px solid #333333;}
 #container section article figure figcaption{display:none;}
 
@@ -130,8 +128,9 @@ header nav c{color:#C0BAB6; background-color:#1f6b81;margin-right: 40%; margin-l
 #container aside{float:right; width:300px; margin-right: 10%}
 
 #container aside nav{display:block; width:400px; margin-bottom:30px;}
-#container aside nav h2{margin:0 0 20px 0; color:#666666; background-color:#FFFFFF;}
-#container aside nav h3{margin:0 0 40px 0; color:#2cabcf; background-color:#FFFFFF;font-size: 40px;}
+#container aside nav h2{margin:0 0 10px 0; color:#666666; background-color:#FFFFFF;}
+#container aside nav h3{margin:0 0 10px 0; color:#2cabcf; background-color:#FFFFFF;font-size: 40px;}
+#container aside nav h4{margin:0 0 0 0; color:#2cabcf; background-color:#FFFFFF;font-size: 18px;}
 #container aside nav ul{margin:0; padding:0; list-style:none;}
 #container aside nav li{margin:0 0 3px 0; padding:0;}
 #container aside nav ul ul, #container aside nav ul ul ul, #container aside nav ul ul ul ul, #container aside nav ul ul ul ul ul{border-top:none; padding-top:0;}

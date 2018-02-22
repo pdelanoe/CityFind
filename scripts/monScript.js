@@ -264,7 +264,7 @@ $(document).ready(function () {
       {
         if(i<10)
         {
-          $('#id02').append('Score : ' + mesScores[i].Score +' Points<br>');
+          $('#id02').append('<h4> Score : ' + mesScores[i].Score +' Points <h4><br>');
         }       
       }
     });
