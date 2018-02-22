@@ -17,6 +17,12 @@ L.mapbox.styleLayer('mapbox://styles/scharbois/cjdwunja77e8m2smo9709wjmb').addTo
 var nbCityFind = 0;
 var nbCityNeedToFind = 5;
 var monScoreTotal = 0;
+var lastmarker = null;
+var lastmarkerResult = null;
+var lastCityResult = null;
+var lastLine = null;
+var maVille;
+
 
 $(document).ready(function () {
   hide_div('result');
@@ -29,7 +35,7 @@ $(document).ready(function () {
 
 
   $("#button_valider").click(function () {
-    if (lastmarker != undefined) {
+    if (lastmarker != null) {
       setMapView(mapResult);
       hide_div('game');
       result();
@@ -44,57 +50,62 @@ $(document).ready(function () {
   $("#button_retour").click(function () {
     setMapView(map);
     hide_div('result');
-    //Remove marker sur la map de recherche
-    if (lastmarker != undefined) {
+    //Remove marker sur la map de recherche et resultat
+    if (lastmarker != null && lastmarkerResult != null) {
       lastmarker.remove();
+      lastmarkerResult.remove();
+      lastmarker = null;
+      lastmarkerResult = null;
     }
     newCity();
     show_div('game');
   });
 
-  $('#selectorNb button').click(function() {
+  $('#selectorNb button').click(function () {
     nbCityNeedToFind = this.value;
     restartGame();
-});
+  });
 
-  var lastmarker;
-  var lastmarkerResult;
-  var lastCityResult;
-  var lastLine;
-  var maVille;
 
-  function setMapView(m)
-  {
-      m.setView([46.8, 1.5], 6.4);
+  function setMapView(m) {
+    m.setView([46.8, 1.5], 6.4);
   }
 
-  function restartGame()
-  { 
+  function restartGame() {
+    var bouton = document.getElementById('button_retour');
+    if(bouton.disabled == true)
+    {
+      bouton.disabled = false;
+    }  
     setMapView(map);
     nbCityFind = 0;
     monScoreTotal = 0;
-    var bouton = document.getElementById('button_retour');
-    bouton.disabled = false;
-    if (lastmarker != undefined) {
+    //Remove marker sur la map de recherche et resultat
+    if (lastmarker != null && lastmarkerResult != null) {
       lastmarker.remove();
+      lastmarkerResult.remove();
+      lastmarker = null;
+      lastmarkerResult = null;
     }
     newCity();
     hide_div('result');
     show_div('game');
   }
+  
 
+  //FONCTION QUI GERE LA PARTIE DE RESULTAT AVEC L'AFFICHAGE DES MARKERS/TRAITS ET LE CALCUL DU SCORE
   function result() {
 
     //Ajoute le marker de la ville exact sur la map de resultat
-    if (lastCityResult != undefined) {
+    if (lastCityResult != null) {
       lastCityResult.remove();
     }
     // create custom icon
-     var markerIcon = L.icon({
-       iconUrl: 'styles/resultMarker.png',
-       iconSize: [64, 64], // size of the icon
-     });
-     lastCityResult = L.marker([maVille.Latitude, maVille.Longitude], { icon: markerIcon }).addTo(mapResult);
+    var markerIcon = L.icon({
+      iconUrl: 'styles/resultMarker.png',
+      iconSize: [64, 64], // size of the icon
+    });
+    lastCityResult = L.marker([maVille.Latitude, maVille.Longitude], { icon: markerIcon }).addTo(mapResult);
 
     // Gestion de la création de la ligne entre les deux markers
     if (lastLine != undefined) {
@@ -110,25 +121,15 @@ $(document).ready(function () {
 
     // Gestion du calcul de la distance
     var lat1 = lastCityResult._latlng.lat;
-    console.log("lat1=" + lat1);
     var lon1 = lastCityResult._latlng.lng;
-    console.log("lon1=" + lon1);
     var lat2 = lastmarkerResult._latlng.lat;
-    console.log("lat2=" + lat2);
     var lon2 = lastmarkerResult._latlng.lng;
-    console.log("lon2=" + lon2);
     var maDistance = calculDistance(lat1, lon1, lat2, lon2);   //Kilomètres de retour
-    console.log(maDistance);
-    var valbar = 0;
-    if (maDistance < 400) {
-      valbar = (1 - (maDistance / 400)) * 100;
-    }
 
     var monScore = scores(maDistance);
-    console.log(monScore);
     monScoreTotal = monScoreTotal + monScore;
     //document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(2) + " POINTS";
-    document.getElementById("myScoreTotal").innerHTML ="<center>"+ monScoreTotal.toFixed(0);+"</center>";
+    document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
   }
 
   //FONCTION QUI CALCULE LE SCORE
@@ -169,7 +170,7 @@ $(document).ready(function () {
   //FONCTION QUI RENVOIE UNE NOUVELLE VILLE A CHERCHER
   function newCity() {
     nbCityFind++;
-    document.getElementById("myNbCityFind").innerHTML = "<center>"+nbCityFind+"/"+nbCityNeedToFind+"</center>";
+    document.getElementById("myNbCityFind").innerHTML = "<center>" + nbCityFind + "/" + nbCityNeedToFind + "</center>";
     $.getJSON('scripts/VillesFr.json', function (donnees) {
       var rd = Math.floor((Math.random() * 273) + 1);
       maVille = donnees.Ville[rd]
@@ -192,7 +193,7 @@ $(document).ready(function () {
   //ACTION AU CLICK SU LA MAP DE RECHERCHE
   map.on('click', function (e) {
     //Supprime les anciens markers si ils sont présents
-    if (lastmarker != undefined && lastmarkerResult != undefined) {
+    if (lastmarker != null && lastmarkerResult != null) {
       lastmarker.remove();
       lastmarkerResult.remove();
     }
