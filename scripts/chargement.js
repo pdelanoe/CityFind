@@ -5,8 +5,7 @@ if(window.addEventListener){
 }
 
 function chargement(){
- hide_div('id01')
- hide_div('id02')
+ hide_div('id01');
 }
 
   //FONCTION QUI CACHE UNE DIV

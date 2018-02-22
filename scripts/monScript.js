@@ -27,6 +27,7 @@ var maVille;
 $(document).ready(function () {
   hide_div('result');
   newCity();
+  getScores(nbCityNeedToFind);
 
   //BOUTON QUI PERMET DE RESTART LA PARTIE
   $("#button_restart").click(function () {
@@ -63,9 +64,10 @@ $(document).ready(function () {
     show_div('game');
   });
 
-   //FONCTION MODIFIANT LE NOMBRE DE VILLE A TROUVER
+  //FONCTION MODIFIANT LE NOMBRE DE VILLE A TROUVER
   $('#selectorNb button').click(function () {
-    nbCityNeedToFind = this.value;
+    nbCityNeedToFind = Number(this.value);
+    getScores(nbCityNeedToFind);
     restartGame();
   });
 
@@ -76,10 +78,9 @@ $(document).ready(function () {
 
   function restartGame() {
     var bouton = document.getElementById('button_retour');
-    if(bouton.disabled == true)
-    {
+    if (bouton.disabled == true) {
       bouton.disabled = false;
-    }  
+    }
     setMapView(map);
     nbCityFind = 0;
     monScoreTotal = 0;
@@ -95,7 +96,7 @@ $(document).ready(function () {
     hide_div('result');
     show_div('game');
   }
-  
+
 
   //FONCTION QUI GERE LA PARTIE DE RESULTAT AVEC L'AFFICHAGE DES MARKERS/TRAITS ET LE CALCUL DU SCORE
   function result() {
@@ -136,7 +137,7 @@ $(document).ready(function () {
     document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
   }
 
-  
+
   //FONCTION QUI CALCULE LE SCORE
   function scores(dist) {
     var score;;
@@ -210,4 +211,29 @@ $(document).ready(function () {
     lastmarkerResult = L.marker([mylat, mylng]).addTo(mapResult);
   });
 
+  //FONCTION QUI RECUPERE LES sCORES 
+  function getScores(nb) {
+    var mesScores = new Array();
+    $.getJSON('scripts/Scores.json', function (donnees) {
+      donnees.Score.forEach(function (d) {
+        if (d.NbCity == nb) {
+          mesScores.push(d); 
+        }
+      });
+      //trie la liste
+      mesScores.sort(function(a,b){
+        return a.Score -b.Score;
+      })
+      mesScores.reverse();
+      //Affiche les scores
+      document.getElementById("id02").innerHTML="";
+      for(var i=0;i<mesScores.length;i++)
+      {
+        if(i<10)
+        {
+          $('#id02').append('Score : ' + mesScores[i].Score +' Points<br>');
+        }       
+      }
+    });
+  }
 });
