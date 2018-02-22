@@ -40,7 +40,7 @@ $(document).ready(function () {
       hide_div('game');
       result();
       show_div('result');
-      if (nbCityFind >= CityNeedToFind) {
+      if (nbCityFind >= nbCityNeedToFind) {
         var bouton = document.getElementById('button_retour');
         bouton.disabled = true;
       }
@@ -149,7 +149,6 @@ $(document).ready(function () {
         return score;
       }
     }
-
   }
 
   //FONCTION QUI CALCULE LA DISTANCE ENTRE LES DEUX COORDONNEES
