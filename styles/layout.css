@@ -62,7 +62,7 @@ h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:24px; font-weight:normal; 
 
 
 /*-----------------------------------------ProgressBar------------------------------------*/
-ul.progress_bar{  max-width: 120em;  width: 100%;  padding: 0 18px; float: center;  height: 2em;  margin-left: 0;  padding: 0;  font-size: 10px; /* change font size only to scale*/}
+ul.progress_bar{  max-width: 120em;  width: 100%;  padding: 0 18px;   height: 2em;  padding: 0;  font-size: 10px; /* change font size only to scale*/}
 
 ul.progress_bar li{  width: 7%;  float: left;  height: 100%;  list-style: none;  position: relative;  margin: 0;  padding: 0;}
 

@@ -22,6 +22,7 @@ var lastmarkerResult = null;
 var lastCityResult = null;
 var lastLine = null;
 var maVille;
+document.getElementById('progress').style.marginLeft="94%";
 //jacques//
 
 
@@ -69,6 +70,17 @@ $(document).ready(function () {
   //FONCTION MODIFIANT LE NOMBRE DE VILLE A TROUVER
   $('#selectorNb button').click(function () {
     nbCityNeedToFind = Number(this.value);
+    switch(nbCityNeedToFind) {
+      case 5 : 
+        document.getElementById('progress').style.marginLeft="94%";
+        break;
+      case 10 : 
+        document.getElementById('progress').style.marginLeft="77%";
+        break;
+      case 15 : 
+        document.getElementById('progress').style.marginLeft="60%";
+        break;
+    }
 
     var c = document.getElementById('selectorNb').children;
     for (var i = 0 ; i<c.length;i++){
