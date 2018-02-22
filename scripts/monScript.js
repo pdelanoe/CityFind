@@ -15,6 +15,7 @@ L.mapbox.styleLayer('mapbox://styles/scharbois/cjdwunja77e8m2smo9709wjmb').addTo
 
 /////////////////////////////////////////////////////////////////////////////////////////////////////////
 var nbCityFind = 0;
+var nbCityNeedToFind = 5;
 var monScoreTotal = 0;
 
 $(document).ready(function () {
@@ -23,17 +24,7 @@ $(document).ready(function () {
 
 
   $("#button_restart").click(function () {
-    setMapView(map);
-    nbCityFind = 0;
-    scoreTotal = 0;
-    var bouton = document.getElementById('button_retour');
-    bouton.disabled = false;
-    if (lastmarker != undefined) {
-      lastmarker.remove();
-    }
-    newCity();
-    hide_div('result');
-    show_div('game');
+    restartGame();
   });
 
 
@@ -43,13 +34,12 @@ $(document).ready(function () {
       hide_div('game');
       result();
       show_div('result');
-      if (nbCityFind >= 5) {
+      if (nbCityFind >= CityNeedToFind) {
         var bouton = document.getElementById('button_retour');
         bouton.disabled = true;
       }
     }
   });
-
 
   $("#button_retour").click(function () {
     setMapView(map);
@@ -62,6 +52,11 @@ $(document).ready(function () {
     show_div('game');
   });
 
+  $('#selectorNb button').click(function() {
+    nbCityNeedToFind = this.value;
+    restartGame();
+});
+
   var lastmarker;
   var lastmarkerResult;
   var lastCityResult;
@@ -71,6 +66,21 @@ $(document).ready(function () {
   function setMapView(m)
   {
       m.setView([46.8, 1.5], 6.4);
+  }
+
+  function restartGame()
+  { 
+    setMapView(map);
+    nbCityFind = 0;
+    monScoreTotal = 0;
+    var bouton = document.getElementById('button_retour');
+    bouton.disabled = false;
+    if (lastmarker != undefined) {
+      lastmarker.remove();
+    }
+    newCity();
+    hide_div('result');
+    show_div('game');
   }
 
   function result() {
@@ -159,7 +169,7 @@ $(document).ready(function () {
   //FONCTION QUI RENVOIE UNE NOUVELLE VILLE A CHERCHER
   function newCity() {
     nbCityFind++;
-    document.getElementById("myNbCityFind").innerHTML = "<center>"+nbCityFind+"/5</center>";
+    document.getElementById("myNbCityFind").innerHTML = "<center>"+nbCityFind+"/"+nbCityNeedToFind+"</center>";
     $.getJSON('scripts/VillesFr.json', function (donnees) {
       var rd = Math.floor((Math.random() * 273) + 1);
       maVille = donnees.Ville[rd]
