@@ -22,6 +22,7 @@ var lastmarkerResult = null;
 var lastCityResult = null;
 var lastLine = null;
 var maVille;
+//jacques//
 
 
 $(document).ready(function () {
