@@ -27,7 +27,7 @@
                     <td href="#"><!-- lien pour ouvrir le form de log -->
 								<a onclick="document.getElementById('id01').style.display='block'">Login</a>
 								
-								<div id="id01" class="modal">
+								<div id="id01">
 								<form id="form_id" method="post" name="myform">
 								<label>User Name :</label>
 								<input type="text" placeholder="Enter Username" name="username" id="username" />
@@ -107,10 +107,26 @@
         <h1>
           <button id="button_restart" class="btn" style="width: 20%">Restart</button>
         </h1>
+	
+	<div id="id02">
+	<label>High score</label>
+	<form id="form_id" method="post" name="myform">
+								<label>User Name :</label>
+								<input type="text"name="username" id="username" />
+								<br></br>
+								<label>Score :</label>
+								<input type="text" name="EnterScore" id="EnterScore" />
+								<input type="button" class="btn" value="Ajouter" id="submit" onclick="add()"/>
+	<ol type="1">
+	<li>12 city<li>
+	<li>9 city</li>
+	</ol>
+	</div>
 
       </nav>
     </aside>
     <!-- / content body -->
+
     <div class="clear"></div>
   </div>
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -119,7 +135,8 @@
   <script src='https://api.mapbox.com/mapbox.js/plugins/turf/v2.0.2/turf.min.js'></script>
   <script src="scripts/monScript.js" type="text/javascript"></script>
   <script src="scripts/login.js" type="text/javascript"></script>
-
+  <script src="scripts/chargement.js" type="text/javascript"></script>
+  
 </body>
 
 </html>
