@@ -21,10 +21,10 @@
         <li>
           <table width=100%>
             <tr>
-              <td href="#">
+              <td style="padding-right:15px" href="#">
                 <center>Your score</center>
               </td>
-              <td href="#">
+              <td style="padding-right:15px" href="#">
                 <center>Progress</center>
               </td>
               <td href="#">
@@ -89,20 +89,12 @@
         <!-- section 2 -->
         <section class="clear">
           <button id="button_valider" class="btn" style="width: 40%">Make Guess</button>
-          <ul class="progress_bar">
-            <li class='activated'>
-              <span></span>
-            </li>
-            <li>
-              <span></span>
-            </li>
-            <li>
-              <span></span>
-            </li>
-            <li>
-              <span></span>
-            </li>
-          </ul>
+          <ul class="progress_bar" id = "bullet_points" >
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+            <li><span></span></li>
+        </ul>  
         </section>
       </div>
       <div id="result">
@@ -126,21 +118,17 @@
         <h3 id=City></h3>
         <h2></h2>
         <h1>Choose your play zone</h1>
-        <div class="btn-group" role="group">
-          <h1>
-            <button type="button" class="btn" style="width: 22%">France</button>
-            <button type="button" class="btn" style="width: 22%">Europe</button>
-          </h1>
-        </div>
+        <div id="selectorCountry" class="btn-group" role="group">          
+          <button id= "fr" type="button" class="btn btn-toggled" style="width: 22%">France</button>
+          <button id="eur" type="button" class="btn" style="width: 22%">Europe</button>          
+      </div>
         <h2></h2>
         <h1>Choose number of city</h1>
-        <div id="selectorNb" class="btn-group" role="group">
-          <h1>
-            <button type="button" class="btn" value="5" style="width: 12%">5</button>
-            <button type="button" class="btn" value="10" style="width: 12%">10</button>
-            <button type="button" class="btn" value="15" style="width: 12%">15</button>
-          </h1>
-        </div>
+        <div  id="selectorNb" class="btn-group" role="group">          
+          <button id="cinq"   type="button" class="btn btn-toggled" value="5" style="width: 12%">5</button>
+          <button id="dix"    type="button" class="btn " value="10" style="width: 12%">10</button>
+          <button id="quinze" type="button" class="btn " value="15" style="width: 12%">15</button>          
+      </div>
         <h2></h2>
         <h1>Restart this game</h1>
         <h1>

@@ -68,9 +68,32 @@ $(document).ready(function () {
   //FONCTION MODIFIANT LE NOMBRE DE VILLE A TROUVER
   $('#selectorNb button').click(function () {
     nbCityNeedToFind = Number(this.value);
+
+    var c = document.getElementById('selectorNb').children;
+    for (var i = 0 ; i<c.length;i++){
+      c[i].className='btn'
+    }
+    
+    this.classList.toggle("btn-toggled");  
+
+
     getScores(nbCityNeedToFind);
     restartGame();
   });
+
+  $('#selectorCountry button').click(function () {
+    
+    var c = document.getElementById('selectorCountry').children;
+    for (var i = 0 ; i<c.length;i++){
+      c[i].className='btn'
+    }
+    
+    this.classList.toggle("btn-toggled");         
+    restartGame(); 
+  });
+
+
+
 
   //FONCTION PERMETTANT DE RESET L'EMPLACEMENT DE LA CARTE
   function setMapView(m) {
@@ -78,6 +101,13 @@ $(document).ready(function () {
   }
 
   function restartGame() {
+
+    $("#bullet_points").empty();
+    for (var i =0; i<nbCityNeedToFind -1;i++)
+    {      
+      $("#bullet_points").append('<li><span></span></li>');
+    }
+    
     var bouton = document.getElementById('button_retour');
     if (bouton.disabled == true) {
       bouton.disabled = false;
