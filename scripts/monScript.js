@@ -28,25 +28,27 @@ $(document).ready(function () {
   hide_div('result');
   newCity();
 
-
+  //BOUTON QUI PERMET DE RESTART LA PARTIE
   $("#button_restart").click(function () {
     restartGame();
   });
 
 
+  //BOUTON QUI PERMET D'AFFICHER LE RESULTAT DE LA VILLE CHERCHE
   $("#button_valider").click(function () {
     if (lastmarker != null) {
       setMapView(mapResult);
       hide_div('game');
       result();
       show_div('result');
-      if (nbCityFind >= CityNeedToFind) {
+      if (nbCityFind >= nbCityNeedToFind) {
         var bouton = document.getElementById('button_retour');
         bouton.disabled = true;
       }
     }
   });
 
+  //BOUTON QUI PERMET DE CHERCHER UNENOUVELLE VILLE QUAND ON EST SUR L'AFFICHAGE RESULTAT
   $("#button_retour").click(function () {
     setMapView(map);
     hide_div('result');
@@ -61,12 +63,13 @@ $(document).ready(function () {
     show_div('game');
   });
 
+   //FONCTION MODIFIANT LE NOMBRE DE VILLE A TROUVER
   $('#selectorNb button').click(function () {
     nbCityNeedToFind = this.value;
     restartGame();
   });
 
-
+  //FONCTION PERMETTANT DE RESET L'EMPLACEMENT DE LA CARTE
   function setMapView(m) {
     m.setView([46.8, 1.5], 6.4);
   }
@@ -80,6 +83,7 @@ $(document).ready(function () {
     setMapView(map);
     nbCityFind = 0;
     monScoreTotal = 0;
+    document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
     //Remove marker sur la map de recherche et resultat
     if (lastmarker != null && lastmarkerResult != null) {
       lastmarker.remove();
@@ -128,10 +132,11 @@ $(document).ready(function () {
 
     var monScore = scores(maDistance);
     monScoreTotal = monScoreTotal + monScore;
-    //document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(2) + " POINTS";
+    document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(0) + " POINTS";
     document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
   }
 
+  
   //FONCTION QUI CALCULE LE SCORE
   function scores(dist) {
     var score;;
@@ -149,7 +154,6 @@ $(document).ready(function () {
         return score;
       }
     }
-
   }
 
   //FONCTION QUI CALCULE LA DISTANCE ENTRE LES DEUX COORDONNEES
