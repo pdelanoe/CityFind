@@ -57,8 +57,8 @@ nav ul{margin:0; padding:0; list-style:none;}
  
 .btn:active {    background: #2cabcf;    text-shadow: 0 -1px #eee;    border: 1px solid #1f6b81;}*/
 
-h1, h2, h3, h4, h5, h6{margin:0; padding:0; font-size:24px; font-weight:normal; font-style:normal; line-height:normal;}
-
+h1, h2, h3, h4, h6{margin:0; padding:0; font-size:24px; font-weight:normal; font-style:normal; line-height:normal;}
+h5{margin:0; padding:0; font-size:14px; font-weight:normal; font-style:normal; line-height:normal; color:#1f6b81;}
 
 
 /*-----------------------------------------ProgressBar------------------------------------*/
@@ -87,6 +87,7 @@ header #hgroup{float:left; padding:20px;}
 header #hgroup h1{font-size:36px;}
 header #hgroup h2{font-size:13px;}
 header #hgroup h3{font-size:40px;}
+
 
 header nav{float:right; padding:20px;}
 header nav ul{margin-top:15px;}

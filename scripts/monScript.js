@@ -22,7 +22,7 @@ var lastmarkerResult = null;
 var lastCityResult = null;
 var lastLine = null;
 var maVille;
-document.getElementById('progress').style.marginLeft="93%";
+document.getElementById('progress').style.marginLeft="94%";
 //jacques//
 
 
@@ -72,7 +72,7 @@ $(document).ready(function () {
     nbCityNeedToFind = Number(this.value);
     switch(nbCityNeedToFind) {
       case 5 : 
-        document.getElementById('progress').style.marginLeft="93%";
+        document.getElementById('progress').style.marginLeft="94%";
         break;
       case 10 : 
         document.getElementById('progress').style.marginLeft="76%";
