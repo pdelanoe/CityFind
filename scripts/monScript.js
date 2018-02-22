@@ -206,6 +206,7 @@ $(document).ready(function () {
 
   //FONCTION QUI RENVOIE UNE NOUVELLE VILLE A CHERCHER
   function newCity() {
+    document.getElementById("bullet_points").children[nbCityFind].className += 'activated';
     nbCityFind++;
     document.getElementById("myNbCityFind").innerHTML = "<center>" + nbCityFind + "/" + nbCityNeedToFind + "</center>";
     $.getJSON('scripts/VillesFr.json', function (donnees) {
