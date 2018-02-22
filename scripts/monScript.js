@@ -83,6 +83,7 @@ $(document).ready(function () {
     setMapView(map);
     nbCityFind = 0;
     monScoreTotal = 0;
+    document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
     //Remove marker sur la map de recherche et resultat
     if (lastmarker != null && lastmarkerResult != null) {
       lastmarker.remove();
@@ -131,7 +132,7 @@ $(document).ready(function () {
 
     var monScore = scores(maDistance);
     monScoreTotal = monScoreTotal + monScore;
-    //document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(2) + " POINTS";
+    document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(0) + " POINTS";
     document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
   }
 
