@@ -177,7 +177,7 @@ $(document).ready(function () {
 
     var monScore = scores(maDistance);
     monScoreTotal = monScoreTotal + monScore;
-    document.getElementById("myScore").innerHTML = "SCORE = " + monScore.toFixed(0) + " POINTS";
+    document.getElementById("myScore").innerHTML = "This round : " + monScore.toFixed(0) + " Points";
     document.getElementById("myScoreTotal").innerHTML = "<center>" + monScoreTotal.toFixed(0); +"</center>";
   }
 
@@ -274,9 +274,10 @@ $(document).ready(function () {
       document.getElementById("id02").innerHTML="";
       for(var i=0;i<mesScores.length;i++)
       {
+        j=i+1;
         if(i<10)
         {
-          $('#id02').append('<h4> Score : ' + mesScores[i].Score +' Points <h4><br>');
+          $('#id02').append('<h4> Score '+j+' : ' + mesScores[i].Score +' Points <h4><br>');
         }       
       }
     });
