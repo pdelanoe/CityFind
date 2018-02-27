@@ -5,7 +5,9 @@ Le but de ce jeu est de localiser une série de ville avec le plus de précision
 
 Steven Charbois,
 Pierre-Gilles Delanoë
+Julien Thielleux
 
 Technologies utilisées : 
 MapBox API,
-JSON
+JSON,
+Local storage

@@ -30,6 +30,7 @@ $(document).ready(function () {
   hide_div('id01');
   hide_div('result');
   newCity();
+  initStorage();
   getScores(nbCityNeedToFind);
 
   //BOUTON QUI PERMET DE RESTART LA PARTIE
@@ -261,13 +262,14 @@ $(document).ready(function () {
 
   //FONCTION QUI RECUPERE LES SCORES 
   function getScores(nb) {
+    var localObject;
     var mesScores = new Array();
-    $.getJSON('scripts/Scores.json', function (donnees) {
-      donnees.Score.forEach(function (d) {
-        if (d.NbCity == nb) {
-          mesScores.push(d); 
-        }
-      });
+    for (var i =0;i<localStorage.length;i++){
+    localObject =JSON.parse(localStorage.getItem(i));
+    if (localObject.NbCity == nb) {
+      mesScores.push(localObject); 
+    }
+    }
       //trie la liste
       mesScores.sort(function(a,b){
         return a.Score -b.Score;
@@ -283,6 +285,21 @@ $(document).ready(function () {
           $('#id02').append('<h4> Score '+j+' : ' + mesScores[i].Score +' Points <h4><br>');
         }       
       }
-    });
   }
+
+//INITIALISATION DU LOCAL STORAGE
+function initStorage(){
+if(typeof localStorage!='undefined') {
+  var i=0;
+  $.getJSON('scripts/Scores.json', function (donnees) {
+    donnees.Score.forEach(function (d) {
+    localStorage.setItem(i,JSON.stringify(d));
+    i++;
+    });
+});
+}
+ else {
+  alert("localStorage n'est pas supporté");
+}
+}
 });
