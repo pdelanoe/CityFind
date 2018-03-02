@@ -32,6 +32,7 @@ $(document).ready(function () {
   newCity();
   initStorage();
   getScores(nbCityNeedToFind);
+  document.getElementById('addValue').style.display="none"
 
   //BOUTON QUI PERMET DE RESTART LA PARTIE
   $("#button_restart").click(function () {
@@ -49,6 +50,8 @@ $(document).ready(function () {
       if (nbCityFind >= nbCityNeedToFind) {
         var bouton = document.getElementById('button_retour');
         bouton.disabled = true;
+        console.log("affichage");
+        document.getElementById('addValue').style.display="initial"
       }
     }
   });
@@ -142,6 +145,7 @@ $(document).ready(function () {
     newCity();
     hide_div('result');
     show_div('game');
+    document.getElementById('addValue').style.display="none"
   }
 
 
@@ -228,7 +232,6 @@ $(document).ready(function () {
     $.getJSON('scripts/VillesFr.json', function (donnees) {
       var rd = Math.floor((Math.random() * 273) + 1);
       maVille = donnees.Ville[rd]
-      console.log(maVille);
       document.getElementById("City").innerHTML = maVille.Nom;
     });
   }
@@ -264,8 +267,8 @@ $(document).ready(function () {
   function getScores(nb) {
     var localObject;
     var mesScores = new Array();
-    for (var i =0;i<localStorage.length;i++){
-    localObject =JSON.parse(localStorage.getItem(i));
+    for (var i =1;i<=localStorage.length;i++){
+    localObject = JSON.parse(localStorage.getItem(i));
     if (localObject.NbCity == nb) {
       mesScores.push(localObject); 
     }
@@ -283,18 +286,20 @@ $(document).ready(function () {
         if(i<10)
         {
           $('#id02').append('<h4> Score '+j+' : ' + mesScores[i].Score +' Points <h4><br>');
-        }       
+        }/*else
+        {
+          localStorage.removeItem(mesScores[i].id);
+        }*/
+
       }
   }
 
 //INITIALISATION DU LOCAL STORAGE
 function initStorage(){
 if(typeof localStorage!='undefined') {
-  var i=0;
   $.getJSON('scripts/Scores.json', function (donnees) {
     donnees.Score.forEach(function (d) {
-    localStorage.setItem(i,JSON.stringify(d));
-    i++;
+    localStorage.setItem(d.id,JSON.stringify(d));
     });
 });
 }
@@ -302,4 +307,18 @@ if(typeof localStorage!='undefined') {
   alert("localStorage n'est pas supporté");
 }
 }
+
+//FONCTION QUI AJOUTE UNE VALEUR AU LOCAL STOARGE
+function AddValueStorage(nb,score){
+  var local={id: localStorage.length ,
+              NbCity: nb,
+              Score: score};
+    localStorage.setItem(localStorage.length+1,JSON.stringify(local));
+    getScores(nbCityNeedToFind);
+  }
+
+//BOUTON QUI AJOUTE UN SCORE
+$("#addValue").click(function () {
+  AddValueStorage(nbCityNeedToFind,monScoreTotal);
+});
 });
