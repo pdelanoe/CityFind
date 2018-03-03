@@ -22,8 +22,7 @@ var lastmarkerResult = null;
 var lastCityResult = null;
 var lastLine = null;
 var maVille;
-document.getElementById('progress').style.marginLeft="96%";
-//jacques//
+document.getElementById('progress').style.marginLeft = "96%";
 
 
 $(document).ready(function () {
@@ -32,7 +31,7 @@ $(document).ready(function () {
   newCity();
   initStorage();
   getScores(nbCityNeedToFind);
-  document.getElementById('addValue').style.display="none"
+  document.getElementById('addValue').style.display = "none"
 
   //BOUTON QUI PERMET DE RESTART LA PARTIE
   $("#button_restart").click(function () {
@@ -48,10 +47,8 @@ $(document).ready(function () {
       result();
       show_div('result');
       if (nbCityFind >= nbCityNeedToFind) {
-        var bouton = document.getElementById('button_retour');
-        bouton.disabled = true;
-        console.log("affichage");
-        document.getElementById('addValue').style.display="initial"
+        document.getElementById('addValue').style.display = "initial";
+        document.getElementById('button_retour').style.display = "none";
       }
     }
   });
@@ -74,42 +71,46 @@ $(document).ready(function () {
   //FONCTION MODIFIANT LE NOMBRE DE VILLE A TROUVER
   $('#selectorNb button').click(function () {
     nbCityNeedToFind = Number(this.value);
-    switch(nbCityNeedToFind) {
-      case 5 : 
-        document.getElementById('progress').style.marginLeft="96%";
+    switch (nbCityNeedToFind) {
+      case 5:
+        document.getElementById('progress').style.marginLeft = "96%";
         break;
-      case 10 : 
-        document.getElementById('progress').style.marginLeft="80%";
+      case 10:
+        document.getElementById('progress').style.marginLeft = "80%";
         break;
-      case 15 : 
-        document.getElementById('progress').style.marginLeft="65%";
+      case 15:
+        document.getElementById('progress').style.marginLeft = "65%";
         break;
     }
 
     var c = document.getElementById('selectorNb').children;
-    for (var i = 0 ; i<c.length;i++){
-      c[i].className='btn'
+    for (var i = 0; i < c.length; i++) {
+      c[i].className = 'btn'
     }
-    
-    this.classList.toggle("btn-toggled");  
 
+    this.classList.toggle("btn-toggled");
 
     getScores(nbCityNeedToFind);
     restartGame();
   });
 
   $('#selectorCountry button').click(function () {
-    
+
     var c = document.getElementById('selectorCountry').children;
-    for (var i = 0 ; i<c.length;i++){
-      c[i].className='btn'
+    for (var i = 0; i < c.length; i++) {
+      c[i].className = 'btn'
     }
-    
-    this.classList.toggle("btn-toggled");         
-    restartGame(); 
+
+    this.classList.toggle("btn-toggled");
+    restartGame();
   });
 
 
+  //BOUTON QUI AJOUTE UN SCORE
+  $("#addValue").click(function () {
+    AddValueStorage(nbCityNeedToFind, monScoreTotal);
+    this.style.display = "none";
+  });
 
 
   //FONCTION PERMETTANT DE RESET L'EMPLACEMENT DE LA CARTE
@@ -121,16 +122,11 @@ $(document).ready(function () {
 
     $("#bullet_points").empty();
     $("#bullet_points").append('<li class="activated"><span></span></li>');
-    for (var i =1; i<nbCityNeedToFind -1;i++)
-    {      
+    for (var i = 1; i < nbCityNeedToFind - 1; i++) {
       $("#bullet_points").append('<li><span></span></li>');
     }
     $("#bullet_points").append('<li></li>');
-    
-    var bouton = document.getElementById('button_retour');
-    if (bouton.disabled == true) {
-      bouton.disabled = false;
-    }
+
     setMapView(map);
     nbCityFind = 0;
     monScoreTotal = 0;
@@ -145,7 +141,8 @@ $(document).ready(function () {
     newCity();
     hide_div('result');
     show_div('game');
-    document.getElementById('addValue').style.display="none"
+    document.getElementById('button_retour').style.display = "initial";
+    document.getElementById('addValue').style.display = "none";
   }
 
 
@@ -225,8 +222,8 @@ $(document).ready(function () {
 
   //FONCTION QUI RENVOIE UNE NOUVELLE VILLE A CHERCHER
   function newCity() {
-    if(nbCityFind)
-    document.getElementById("bullet_points").children[nbCityFind].className += 'activated';
+    if (nbCityFind)
+      document.getElementById("bullet_points").children[nbCityFind].className += 'activated';
     nbCityFind++;
     document.getElementById("myNbCityFind").innerHTML = "<center>" + nbCityFind + "/" + nbCityNeedToFind + "</center>";
     $.getJSON('scripts/VillesFr.json', function (donnees) {
@@ -267,58 +264,49 @@ $(document).ready(function () {
   function getScores(nb) {
     var localObject;
     var mesScores = new Array();
-    for (var i =1;i<=localStorage.length;i++){
-    localObject = JSON.parse(localStorage.getItem(i));
-    if (localObject.NbCity == nb) {
-      mesScores.push(localObject); 
-    }
-    }
-      //trie la liste
-      mesScores.sort(function(a,b){
-        return a.Score -b.Score;
-      })
-      mesScores.reverse();
-      //Affiche les scores
-      document.getElementById("id02").innerHTML="";
-      for(var i=0;i<mesScores.length;i++)
-      {
-        j=i+1;
-        if(i<10)
-        {
-          $('#id02').append('<h4> Score '+j+' : ' + mesScores[i].Score +' Points <h4><br>');
-        }/*else
-        {
-          localStorage.removeItem(mesScores[i].id);
-        }*/
-
+    for (var i = 1; i <= localStorage.length; i++) {
+      localObject = JSON.parse(localStorage.getItem(i));
+      if (localObject.NbCity == nb) {
+        mesScores.push(localObject);
       }
+    }
+    //trie la liste
+    mesScores.sort(function (a, b) {
+      return a.Score - b.Score;
+    })
+    mesScores.reverse();
+    //Affiche les scores
+    document.getElementById("id02").innerHTML = "";
+    for (var i = 0; i < mesScores.length; i++) {
+      j = i + 1;
+      if (i < 5) {
+        $('#id02').append('<h4> Score ' + j + ' : ' + mesScores[i].Score.toFixed(0) + ' Points <h4><br>');
+      }
+    }
   }
 
-//INITIALISATION DU LOCAL STORAGE
-function initStorage(){
-if(typeof localStorage!='undefined') {
-  $.getJSON('scripts/Scores.json', function (donnees) {
-    donnees.Score.forEach(function (d) {
-    localStorage.setItem(d.id,JSON.stringify(d));
-    });
-});
-}
- else {
-  alert("localStorage n'est pas supporté");
-}
-}
+  //INITIALISATION DU LOCAL STORAGE
+  function initStorage() {
+    if (typeof localStorage != 'undefined') {
+      $.getJSON('scripts/Scores.json', function (donnees) {
+        donnees.Score.forEach(function (d) {
+          localStorage.setItem(d.id, JSON.stringify(d));
+        });
+      });
+    }
+    else {
+      alert("localStorage n'est pas supporté");
+    }
+  }
 
-//FONCTION QUI AJOUTE UNE VALEUR AU LOCAL STOARGE
-function AddValueStorage(nb,score){
-  var local={id: localStorage.length ,
-              NbCity: nb,
-              Score: score};
-    localStorage.setItem(localStorage.length+1,JSON.stringify(local));
+  //FONCTION QUI AJOUTE UNE VALEUR AU LOCAL STOARGE
+  function AddValueStorage(nb, score) {
+    var local = {
+      id: localStorage.length,
+      NbCity: nb,
+      Score: score
+    };
+    localStorage.setItem(localStorage.length + 1, JSON.stringify(local));
     getScores(nbCityNeedToFind);
   }
-
-//BOUTON QUI AJOUTE UN SCORE
-$("#addValue").click(function () {
-  AddValueStorage(nbCityNeedToFind,monScoreTotal);
-});
 });
